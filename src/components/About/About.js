@@ -34,7 +34,22 @@ const About = () => {
           </div>
         </Rectangle>
       </div>
-      <div className="About">About me</div>
+      <div className="About">
+        <h1>About Me</h1>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don't look even slightly believable.
+          If you are going to use a passage of Lorem Ipsum, you need to be sure
+          there isn't anything embarrassing hidden in the middle of text. All
+          the Lorem Ipsum generators on the Internet tend to repeat predefined
+          chunks as necessary, making this the first true generator on the
+          Internet. It uses a dictionary of over 200 Latin words, combined with
+          a handful of model sentence structures, to generate Lorem Ipsum which
+          looks reasonable. The generated Lorem Ipsum is therefore always free
+          from repetition, injected humour, or non-characteristic words etc.
+        </p>
+      </div>
     </Grid>
   );
 };
@@ -45,13 +60,13 @@ const SImage = styled(Image)`
   position: absolute;
   object-fit: cover;
   border-radius: 50%;
-  top: 200px;
+  top: 700px;
 `;
 
 const Rectangle = styled.div`
-  display: flex;
+  display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   width: 400px;
   height: 500px;
   color: white;
@@ -71,10 +86,15 @@ const Rectangle = styled.div`
 `;
 
 const Grid = styled.div`
+  margin-top: 200px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   .Me {
     display: flex;
@@ -82,6 +102,10 @@ const Grid = styled.div`
     align-items: center;
   }
   .About {
-    border: 2px solid red;
+    text-align: left;
+    margin: 0 50px;
+    h1 {
+      color: rgb(198, 0, 99);
+    }
   }
 `;
