@@ -1,5 +1,12 @@
 import styled from "styled-components";
 import Image from "next/image";
+import {
+  AiOutlineInstagram,
+  AiOutlineLinkedin,
+  AiOutlineFacebook,
+  AiOutlineGithub,
+} from "react-icons/ai";
+
 const About = () => {
   return (
     <Grid>
@@ -13,8 +20,17 @@ const About = () => {
         />
         <Rectangle>
           <div className="Text">
-            <h2>Hi, I'm Amelia</h2>
-            <p>I'm a Junior Web Developer</p>
+            <h1>Hi, I'm Amelia</h1>
+            <p>
+              I'm a versatile Junior Developer whose currently specialising in
+              Web Development with a thirst for knowledge.
+            </p>
+          </div>
+          <div className="Icons">
+            <AiOutlineFacebook />
+            <AiOutlineGithub />
+            <AiOutlineInstagram />
+            <AiOutlineLinkedin />
           </div>
         </Rectangle>
       </div>
@@ -33,22 +49,28 @@ const SImage = styled(Image)`
 `;
 
 const Rectangle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 400px;
   height: 500px;
   color: white;
   background-color: rgb(198, 0, 99);
 
   .Text {
+    margin: 0 15px;
+  }
+  h1 {
+    text-transform: uppercase;
   }
 
-  h2 p {
-    position: absolute;
-    text-transform: uppercase;
+  .Icons {
+    margin-top: 20px;
+    font-size: 30px;
   }
 `;
 
 const Grid = styled.div`
-  border: 1px solid yellow;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -56,11 +78,10 @@ const Grid = styled.div`
 
   .Me {
     display: flex;
-    border: 2px solid red;
     justify-content: center;
     align-items: center;
   }
   .About {
-    border: 2px solid blue;
+    border: 2px solid red;
   }
 `;
