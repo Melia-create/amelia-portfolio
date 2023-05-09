@@ -1,4 +1,5 @@
 import Carousel from "react-multi-carousel";
+import { useState } from "react";
 import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
 import {
@@ -30,16 +31,17 @@ const responsive = {
 };
 
 const Skills = () => {
+  const [selectedItem, setSelectedItem] = useState({});
+
   const skills = [
-    { name: "Javascript", Icon: SiJavascript },
-    { name: "HTML", Icon: SiHtml5 },
-    { name: "CSS", Icon: SiCss3 },
-    { name: "Git", Icon: SiGit },
-    { name: "React", Icon: SiReact },
-    { name: "NextJS", Icon: SiNextdotjs },
+    { id: 1, name: "Javascript", color: "#f0db4f", Icon: SiJavascript },
+    { id: 2, name: "HTML", color: "#dd3e24", Icon: SiHtml5 },
+    { id: 3, name: "CSS", color: "#264de4", Icon: SiCss3 },
+    { id: 4, name: "Git", color: "#f34f29", Icon: SiGit },
+    { id: 5, name: "React", color: "#61dbfb", Icon: SiReact },
+    { id: 6, name: "NextJS", color: "black", Icon: SiNextdotjs },
   ];
 
-  const icons = [SiJavascript, SiHtml5, SiCss3, SiGit, SiReact];
   return (
     <CarouselSection>
       <h1>Skills</h1>
@@ -49,7 +51,15 @@ const Skills = () => {
           return (
             <Container>
               <div className="card">
-                <div className="face face1">
+                <div
+                  className="face face1"
+                  style={
+                    skill.id === selectedItem.id ? { color: skill.color } : {}
+                  }
+                  onMouseEnter={() =>
+                    setSelectedItem({ id: skill.id, color: skill.color })
+                  }
+                >
                   <div className="content">
                     <Icon />
                     <h2>{skill.name}</h2>
@@ -95,11 +105,12 @@ const Container = styled.div`
   .card .face {
     width: 300px;
     height: 200px;
+    text-align: center;
     transition: 0.5s;
   }
   .card .face.face1 {
     position: relative;
-    background: #333;
+    background: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +119,6 @@ const Container = styled.div`
   }
 
   .card:hover .face.face1 {
-    background: rgb(198, 0, 99);
     transform: translateY(0);
   }
 
@@ -125,8 +135,7 @@ const Container = styled.div`
   .card .face.face1 .content h2 {
     margin: 10px 0 0;
     padding: 0;
-    color: #fff;
-    text-align: center;
+    color: rgb(198, 0, 99);
     font-size: 1.5em;
   }
 
@@ -137,7 +146,7 @@ const Container = styled.div`
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 20px 50px rgb(198, 0, 99);
     transform: translateY(-100px);
     color: white;
   }
@@ -156,7 +165,7 @@ const Container = styled.div`
     display: inline-block;
     text-decoration: none;
     font-weight: 900;
-    color: #333;
+    color: rgb(198, 0, 99);
     padding: 5px;
   }
 `;
