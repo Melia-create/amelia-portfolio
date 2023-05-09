@@ -64,6 +64,7 @@ const SImage = styled(Image)`
 `;
 
 const Rectangle = styled.div`
+  border-radius: 10px;
   display: grid;
   justify-content: center;
   align-content: center;
