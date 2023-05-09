@@ -39,7 +39,7 @@ const Skills = () => {
     { id: 3, name: "CSS", color: "#264de4", Icon: SiCss3 },
     { id: 4, name: "Git", color: "#f34f29", Icon: SiGit },
     { id: 5, name: "React", color: "#61dbfb", Icon: SiReact },
-    { id: 6, name: "NextJS", color: "black", Icon: SiNextdotjs },
+    { id: 6, name: "NextJS", color: "grey", Icon: SiNextdotjs },
   ];
 
   return (
@@ -111,6 +111,7 @@ const Container = styled.div`
   .card .face.face1 {
     position: relative;
     background: black;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,11 +121,6 @@ const Container = styled.div`
 
   .card:hover .face.face1 {
     transform: translateY(0);
-  }
-
-  .card .face.face1 .content {
-    opacity: 0.2;
-    transition: 0.5s;
   }
 
   .card:hover .face.face1 .content {
@@ -146,7 +142,7 @@ const Container = styled.div`
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 20px 50px rgb(198, 0, 99);
+    box-shadow: 0 20px 50px black;
     transform: translateY(-100px);
     color: white;
   }
