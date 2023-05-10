@@ -93,7 +93,6 @@ const Container = styled.div`
   }
 
   .card .face {
-    width: 300px;
     height: 200px;
     transition: 0.5s;
   }

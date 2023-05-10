@@ -1,16 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital@1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Source+Sans+Pro:wght@200;400&display=swap");
-:root {
+* {
   font-family: "Poppins";
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited :hover {
+  color: white;
 }
 
 body {
   background-color: black;
   color: white;
-}
-
-h1 {
-  text-align: center;
 }
 
 a:hover {
