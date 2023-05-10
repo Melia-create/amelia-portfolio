@@ -6,6 +6,7 @@ import {
   AiOutlineFacebook,
   AiOutlineGithub,
 } from "react-icons/ai";
+import { FiDownload } from "react-icons/fi";
 
 const About = () => {
   return (
@@ -27,10 +28,18 @@ const About = () => {
             </p>
           </div>
           <div className="Icons">
-            <AiOutlineFacebook />
-            <AiOutlineGithub />
-            <AiOutlineInstagram />
-            <AiOutlineLinkedin />
+            <a>
+              <AiOutlineFacebook />
+            </a>
+            <a href="https://github.com/Melia-create" passHref={true}>
+              <AiOutlineGithub />
+            </a>
+            <a>
+              <AiOutlineInstagram />
+            </a>
+            <a href="https://www.linkedin.com/in/amelia-evr/" passHref={true}>
+              <AiOutlineLinkedin />
+            </a>
           </div>
         </Rectangle>
       </div>
@@ -49,12 +58,37 @@ const About = () => {
           looks reasonable. The generated Lorem Ipsum is therefore always free
           from repetition, injected humour, or non-characteristic words etc.
         </p>
+        <a href="AmeliaRidingCV.pdf" download="AmeliaCV">
+          <Button>
+            <FiDownload />
+            Download Resume
+          </Button>
+        </a>
       </div>
     </Grid>
   );
 };
 
 export default About;
+
+const Button = styled.button`
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid rgb(198, 0, 99);
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  padding: 20px;
+  display: flex;
+  transition: 0.5s;
+  margin-top: 20px;
+
+  :hover {
+    background-color: rgb(198, 0, 99);
+  }
+`;
 
 const SImage = styled(Image)`
   position: absolute;
@@ -81,8 +115,14 @@ const Rectangle = styled.div`
   }
 
   .Icons {
+    display: flex;
+    justify-content: space-evenly;
     margin-top: 20px;
     font-size: 30px;
+
+    & :visited {
+      color: white;
+    }
   }
 `;
 
@@ -103,7 +143,10 @@ const Grid = styled.div`
     align-items: center;
   }
   .About {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 50px;
     h1 {
       color: rgb(198, 0, 99);
